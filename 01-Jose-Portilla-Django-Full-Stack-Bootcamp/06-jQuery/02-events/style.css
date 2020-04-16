@@ -1,0 +1,9 @@
+.text-font-right {
+    text-align: right;
+    color: blue;
+}
+
+.text-font-left {
+    text-align: left;
+    color: red;
+}

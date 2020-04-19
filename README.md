@@ -1,1 +1,1 @@
-# python-web-mastering
+# Django-mastering

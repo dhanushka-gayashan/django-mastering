@@ -1,0 +1,11 @@
+.django {
+    font-size: 20px;
+}
+
+ol li {
+    font-style: italic;
+}
+
+ul li {
+    font-style: normal;
+}

@@ -1,0 +1,30 @@
+{% extends "main_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+    <div class="jumbotron">
+        {% if registered %}
+            <h1 class="display-4">Thanks you for registering</h1>
+        {% else %}
+            <h1 class="display-4">Register Here!</h1>
+            <p class="lead">Fill out the form:</p>
+            <hr class="my-4">
+
+            {# add enctype="multipart/form-data" as we uploading files #}
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+
+                {# Default User Form for Default Fields #}
+                {{ user_form.as_p }}
+
+                {# Profile User Form for Customize Fields #}
+                {{ profile_form.as_p }}
+
+                {# Request direct to same view methods, because we haven't defined an action in form #}
+                <input type="submit" value="Register">
+            </form>
+        {% endif %}
+    </div>
+
+{% endblock %}

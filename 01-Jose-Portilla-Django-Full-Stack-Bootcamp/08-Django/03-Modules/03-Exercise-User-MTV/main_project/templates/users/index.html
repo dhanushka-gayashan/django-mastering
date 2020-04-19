@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <h1>Here are your users list:</h1>
+
+    <div class="django">
+        {% if users_list %}
+            <ol>
+                {% for user in users_list %}
+                    <li>
+                        User Info
+                        <ul>
+                            <li>First Name: {{ user.first_name }}</li>
+                            <li>Last Name: {{ user.last_name }}</li>
+                            <li>Email: {{ user.email }}</li>
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>There is no any users to list here...</p>
+        {% endif %}
+    </div>
+</body>
+</html>
